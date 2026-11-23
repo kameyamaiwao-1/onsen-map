@@ -1,0 +1,1105 @@
+{
+ "_note": "日本百名湯=Wikipedia「日本百名湯」(2002年書籍版)の100湯。新・日本百名湯(2006)は書籍で確認後に追加。geo=manualは温泉地の代表点を手入力",
+ "onsen": [
+  {
+   "id": "H001",
+   "name": "菅野温泉",
+   "pref": "北海道",
+   "lat": 42.56339,
+   "lon": 140.81378,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H002",
+   "name": "養老牛温泉",
+   "pref": "北海道",
+   "lat": 43.5884,
+   "lon": 144.72279,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H003",
+   "name": "定山渓温泉",
+   "pref": "北海道",
+   "lat": 42.96301,
+   "lon": 141.15826,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H004",
+   "name": "登別温泉",
+   "pref": "北海道",
+   "lat": 42.49478,
+   "lon": 141.14514,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H005",
+   "name": "洞爺湖温泉",
+   "pref": "北海道",
+   "lat": 42.56359,
+   "lon": 140.81779,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H006",
+   "name": "ニセコ温泉郷",
+   "pref": "北海道",
+   "lat": 42.80832,
+   "lon": 140.68528,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H007",
+   "name": "朝日温泉",
+   "pref": "北海道",
+   "lat": 42.83,
+   "lon": 140.5,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H008",
+   "name": "酸ヶ湯温泉",
+   "pref": "青森県",
+   "lat": 40.65061,
+   "lon": 140.85049,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H009",
+   "name": "蔦温泉",
+   "pref": "青森県",
+   "lat": 40.59688,
+   "lon": 140.95342,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H010",
+   "name": "花巻南温泉峡",
+   "pref": "岩手県",
+   "lat": 39.4,
+   "lon": 141.0,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H011",
+   "name": "夏油温泉",
+   "pref": "岩手県",
+   "lat": 39.2125,
+   "lon": 140.88647,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H012",
+   "name": "須川高原温泉",
+   "pref": "岩手県",
+   "lat": 38.97971,
+   "lon": 140.77074,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H013",
+   "name": "鳴子温泉郷",
+   "pref": "宮城県",
+   "lat": 38.74347,
+   "lon": 140.71609,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H014",
+   "name": "遠刈田温泉",
+   "pref": "宮城県",
+   "lat": 38.115,
+   "lon": 140.535,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H015",
+   "name": "峩々温泉",
+   "pref": "宮城県",
+   "lat": 38.1441,
+   "lon": 140.50073,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H016",
+   "name": "乳頭温泉郷",
+   "pref": "秋田県",
+   "lat": 39.80076,
+   "lon": 140.79502,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H017",
+   "name": "後生掛温泉",
+   "pref": "秋田県",
+   "lat": 39.97506,
+   "lon": 140.79962,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H018",
+   "name": "玉川温泉",
+   "pref": "秋田県",
+   "lat": 39.96315,
+   "lon": 140.72446,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H019",
+   "name": "秋ノ宮温泉郷",
+   "pref": "秋田県",
+   "lat": 38.93,
+   "lon": 140.58,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H020",
+   "name": "銀山温泉",
+   "pref": "山形県",
+   "lat": 38.57042,
+   "lon": 140.53007,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H021",
+   "name": "瀬見温泉",
+   "pref": "山形県",
+   "lat": 38.75502,
+   "lon": 140.42039,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H022",
+   "name": "赤倉温泉",
+   "pref": "山形県",
+   "lat": 38.73057,
+   "lon": 140.55374,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H023",
+   "name": "東山温泉",
+   "pref": "福島県",
+   "lat": 37.48488,
+   "lon": 139.97959,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H024",
+   "name": "飯坂温泉",
+   "pref": "福島県",
+   "lat": 37.82987,
+   "lon": 140.45428,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H025",
+   "name": "二岐温泉",
+   "pref": "福島県",
+   "lat": 37.218,
+   "lon": 139.937,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H026",
+   "name": "那須温泉郷",
+   "pref": "栃木県",
+   "lat": 37.09719,
+   "lon": 140.00058,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H027",
+   "name": "塩原温泉郷",
+   "pref": "栃木県",
+   "lat": 36.97,
+   "lon": 139.82,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H028",
+   "name": "鬼怒川温泉",
+   "pref": "栃木県",
+   "lat": 36.82268,
+   "lon": 139.71647,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H029",
+   "name": "奥鬼怒温泉郷",
+   "pref": "栃木県",
+   "lat": 36.895,
+   "lon": 139.469,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H030",
+   "name": "草津温泉",
+   "pref": "群馬県",
+   "lat": 36.62083,
+   "lon": 138.59631,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H031",
+   "name": "伊香保温泉",
+   "pref": "群馬県",
+   "lat": 36.4971,
+   "lon": 138.91894,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H032",
+   "name": "四万温泉",
+   "pref": "群馬県",
+   "lat": 36.68573,
+   "lon": 138.77438,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H033",
+   "name": "法師温泉",
+   "pref": "群馬県",
+   "lat": 36.74366,
+   "lon": 138.83003,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H034",
+   "name": "箱根湯本温泉",
+   "pref": "神奈川県",
+   "lat": 35.22873,
+   "lon": 139.09467,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H035",
+   "name": "塔之沢温泉",
+   "pref": "神奈川県",
+   "lat": 35.23176,
+   "lon": 139.10123,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H036",
+   "name": "芦之湯温泉",
+   "pref": "神奈川県",
+   "lat": 35.226,
+   "lon": 139.044,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H037",
+   "name": "湯河原温泉",
+   "pref": "神奈川県",
+   "lat": 35.14573,
+   "lon": 139.07306,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H038",
+   "name": "越後湯沢温泉",
+   "pref": "新潟県",
+   "lat": 38.0901,
+   "lon": 139.56006,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H039",
+   "name": "松之山温泉",
+   "pref": "新潟県",
+   "lat": 37.06497,
+   "lon": 138.59941,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H040",
+   "name": "大牧温泉",
+   "pref": "富山県",
+   "lat": 36.5005,
+   "lon": 136.99411,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H041",
+   "name": "黒部峡谷温泉郷",
+   "pref": "富山県",
+   "lat": 36.76,
+   "lon": 137.64,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H042",
+   "name": "山中温泉",
+   "pref": "石川県",
+   "lat": 36.20786,
+   "lon": 136.43915,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H043",
+   "name": "山代温泉",
+   "pref": "石川県",
+   "lat": 36.28987,
+   "lon": 136.36303,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H044",
+   "name": "粟津温泉",
+   "pref": "石川県",
+   "lat": 36.33148,
+   "lon": 136.44652,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H045",
+   "name": "奈良田温泉",
+   "pref": "山梨県",
+   "lat": 35.59,
+   "lon": 138.31,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H046",
+   "name": "西山温泉",
+   "pref": "山梨県",
+   "lat": 35.55465,
+   "lon": 138.3058,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H047",
+   "name": "野沢温泉",
+   "pref": "長野県",
+   "lat": 36.92316,
+   "lon": 138.44655,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H048",
+   "name": "湯田中温泉",
+   "pref": "長野県",
+   "lat": 36.73946,
+   "lon": 138.41559,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H049",
+   "name": "別所温泉",
+   "pref": "長野県",
+   "lat": 36.35012,
+   "lon": 138.15726,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H050",
+   "name": "中房温泉",
+   "pref": "長野県",
+   "lat": 36.39417,
+   "lon": 137.74618,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H051",
+   "name": "白骨温泉",
+   "pref": "長野県",
+   "lat": 36.15254,
+   "lon": 137.62681,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H052",
+   "name": "小谷温泉",
+   "pref": "長野県",
+   "lat": 36.858,
+   "lon": 137.925,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H053",
+   "name": "下呂温泉",
+   "pref": "岐阜県",
+   "lat": 35.9166,
+   "lon": 137.31053,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H054",
+   "name": "福地温泉",
+   "pref": "岐阜県",
+   "lat": 36.21672,
+   "lon": 137.52104,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H055",
+   "name": "熱海温泉",
+   "pref": "静岡県",
+   "lat": 35.10171,
+   "lon": 139.0782,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H056",
+   "name": "伊東温泉",
+   "pref": "静岡県",
+   "lat": 34.97044,
+   "lon": 139.09872,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H057",
+   "name": "修善寺温泉",
+   "pref": "静岡県",
+   "lat": 34.97055,
+   "lon": 138.92839,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H058",
+   "name": "湯谷温泉",
+   "pref": "愛知県",
+   "lat": 34.97046,
+   "lon": 137.61301,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H059",
+   "name": "榊原温泉",
+   "pref": "三重県",
+   "lat": 34.72,
+   "lon": 136.4,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H060",
+   "name": "木津温泉",
+   "pref": "京都府",
+   "lat": 35.65825,
+   "lon": 134.96729,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H061",
+   "name": "有馬温泉",
+   "pref": "兵庫県",
+   "lat": 34.79926,
+   "lon": 135.24627,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H062",
+   "name": "城崎温泉",
+   "pref": "兵庫県",
+   "lat": 35.62371,
+   "lon": 134.81356,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H063",
+   "name": "湯村温泉",
+   "pref": "兵庫県",
+   "lat": 35.44815,
+   "lon": 134.46038,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H064",
+   "name": "十津川温泉",
+   "pref": "奈良県",
+   "lat": 33.94124,
+   "lon": 135.76826,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H065",
+   "name": "南紀白浜温泉",
+   "pref": "和歌山県",
+   "lat": 33.69369,
+   "lon": 135.33611,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H066",
+   "name": "南紀勝浦温泉",
+   "pref": "和歌山県",
+   "lat": 33.627,
+   "lon": 135.944,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H067",
+   "name": "湯の峰温泉",
+   "pref": "和歌山県",
+   "lat": 33.82872,
+   "lon": 135.75745,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H068",
+   "name": "龍神温泉",
+   "pref": "和歌山県",
+   "lat": 33.95689,
+   "lon": 135.56222,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H069",
+   "name": "奥津温泉",
+   "pref": "岡山県",
+   "lat": 35.22392,
+   "lon": 133.92245,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H070",
+   "name": "湯原温泉",
+   "pref": "岡山県",
+   "lat": 35.20218,
+   "lon": 133.73131,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H071",
+   "name": "三朝温泉",
+   "pref": "鳥取県",
+   "lat": 35.41407,
+   "lon": 133.88582,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H072",
+   "name": "岩井温泉",
+   "pref": "鳥取県",
+   "lat": 35.55549,
+   "lon": 134.3625,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H073",
+   "name": "関金温泉",
+   "pref": "鳥取県",
+   "lat": 35.49246,
+   "lon": 134.23207,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H074",
+   "name": "玉造温泉",
+   "pref": "島根県",
+   "lat": 35.43084,
+   "lon": 133.01219,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H075",
+   "name": "有福温泉",
+   "pref": "島根県",
+   "lat": 34.91,
+   "lon": 132.19,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H076",
+   "name": "温泉津温泉",
+   "pref": "島根県",
+   "lat": 35.09635,
+   "lon": 132.34951,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H077",
+   "name": "湯田温泉",
+   "pref": "山口県",
+   "lat": 34.15988,
+   "lon": 131.46041,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H078",
+   "name": "長門湯本温泉",
+   "pref": "山口県",
+   "lat": 34.32916,
+   "lon": 131.17356,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H079",
+   "name": "祖谷温泉",
+   "pref": "徳島県",
+   "lat": 33.876,
+   "lon": 133.818,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H080",
+   "name": "道後温泉",
+   "pref": "愛媛県",
+   "lat": 33.85043,
+   "lon": 132.78508,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H081",
+   "name": "二日市温泉",
+   "pref": "福岡県",
+   "lat": 33.497,
+   "lon": 130.524,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H082",
+   "name": "嬉野温泉",
+   "pref": "佐賀県",
+   "lat": 33.10667,
+   "lon": 129.99894,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H083",
+   "name": "武雄温泉",
+   "pref": "佐賀県",
+   "lat": 33.19648,
+   "lon": 130.02307,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H084",
+   "name": "雲仙温泉",
+   "pref": "長崎県",
+   "lat": 32.74212,
+   "lon": 130.26166,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H085",
+   "name": "小浜温泉",
+   "pref": "長崎県",
+   "lat": 32.72969,
+   "lon": 130.20693,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H086",
+   "name": "黒川温泉",
+   "pref": "熊本県",
+   "lat": 33.07771,
+   "lon": 131.14194,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H087",
+   "name": "地獄温泉",
+   "pref": "熊本県",
+   "lat": 32.873,
+   "lon": 131.036,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H088",
+   "name": "垂玉温泉",
+   "pref": "熊本県",
+   "lat": 32.866,
+   "lon": 131.024,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H089",
+   "name": "杖立温泉",
+   "pref": "熊本県",
+   "lat": 33.17319,
+   "lon": 131.03767,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H090",
+   "name": "日奈久温泉",
+   "pref": "熊本県",
+   "lat": 32.43597,
+   "lon": 130.58171,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H091",
+   "name": "鉄輪温泉",
+   "pref": "大分県",
+   "lat": 33.317,
+   "lon": 131.477,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H092",
+   "name": "明礬温泉",
+   "pref": "大分県",
+   "lat": 33.3173,
+   "lon": 131.45337,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H093",
+   "name": "由布院温泉",
+   "pref": "大分県",
+   "lat": 33.26059,
+   "lon": 131.3599,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H094",
+   "name": "川底温泉",
+   "pref": "大分県",
+   "lat": 33.238,
+   "lon": 131.155,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H095",
+   "name": "長湯温泉",
+   "pref": "大分県",
+   "lat": 33.0605,
+   "lon": 131.35641,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H096",
+   "name": "京町温泉",
+   "pref": "宮崎県",
+   "lat": 32.04532,
+   "lon": 130.76763,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H097",
+   "name": "指宿温泉",
+   "pref": "鹿児島県",
+   "lat": 31.24934,
+   "lon": 130.61978,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H098",
+   "name": "霧島温泉郷",
+   "pref": "鹿児島県",
+   "lat": 31.86844,
+   "lon": 130.73431,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "auto"
+  },
+  {
+   "id": "H099",
+   "name": "新川渓谷温泉郷",
+   "pref": "鹿児島県",
+   "lat": 31.835,
+   "lon": 130.762,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  },
+  {
+   "id": "H100",
+   "name": "栗野岳温泉",
+   "pref": "鹿児島県",
+   "lat": 31.927,
+   "lon": 130.733,
+   "lists": [
+    "hyaku"
+   ],
+   "geo": "manual"
+  }
+ ]
+}

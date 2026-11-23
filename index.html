@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cut">
+<title>百名湯 制覇マップ</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{
+  --bg:#faf8f5; --fg:#2b2622; --muted:#7a716a; --line:#e4ddd5; --panel:#ffffff;
+  --hyaku:#c8452c; --shin:#2c6fc8; --both:#7a3fb0; --accent:#c8452c;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#1d1a18; --fg:#eee7e0; --muted:#a39890; --line:#3a3430; --panel:#26221f;
+    --hyaku:#ee6a4f; --shin:#5b97ee; --both:#a875d6; --accent:#ee6a4f; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;}
+body{display:flex;flex-direction:column}
+header{padding:10px 16px 8px;border-bottom:1px solid var(--line);background:var(--panel)}
+h1{font-size:17px;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+h1 .mode{font-size:11px;font-weight:normal;padding:2px 8px;border-radius:10px;background:var(--line);color:var(--muted);cursor:pointer}
+h1 .mode.cloud{background:#2f8a4f22;color:#2f8a4f}
+.progress{display:flex;gap:14px;flex-wrap:wrap;font-size:13px}
+.prog{flex:1;min-width:140px}
+.prog .lbl{display:flex;justify-content:space-between}
+.bar{height:6px;background:var(--line);border-radius:3px;margin-top:3px;overflow:hidden}
+.bar i{display:block;height:100%}
+.tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;font-size:13px}
+.tools label{display:flex;align-items:center;gap:4px;padding:4px 10px;border:1px solid var(--line);border-radius:16px;cursor:pointer;user-select:none}
+.tools button{font:inherit;padding:4px 12px;border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--fg);cursor:pointer}
+main{flex:1;position:relative;min-height:0}
+#map{position:absolute;inset:0}
+#list{position:absolute;inset:0;overflow:auto;background:var(--bg);padding:8px 16px 40px;display:none}
+#list.show{display:block}
+#list h3{font-size:13px;color:var(--muted);margin:14px 0 4px}
+.row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.row .nm{flex:1}
+.row .yr{font-size:12px;color:var(--muted)}
+.dot{width:12px;height:12px;flex:none}
+.legend{position:absolute;right:10px;bottom:22px;z-index:500;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:12px;line-height:1.7}
+.legend span{display:inline-block;vertical-align:middle;margin-right:4px}
+/* marker shapes */
+.mk{width:16px;height:16px;border:2.5px solid;background:var(--panel)}
+.mk.hyaku{border-color:var(--hyaku);border-radius:50%}
+.mk.shin{border-color:var(--shin);border-radius:2px}
+.mk.both{border-color:var(--both);border-radius:50%;box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--both)}
+.mk.done.hyaku{background:var(--hyaku)} .mk.done.shin{background:var(--shin)} .mk.done.both{background:var(--both)}
+.yrlbl{background:transparent;border:none;box-shadow:none;font-size:10px;font-weight:600;color:var(--fg);text-shadow:0 0 3px var(--bg),0 0 3px var(--bg);padding:0}
+.yrlbl::before{display:none}
+.leaflet-popup-content{margin:12px 14px;font-size:14px;min-width:200px}
+.pp h4{margin:0 0 2px;font-size:16px}
+.pp .tag{font-size:11px;padding:1px 6px;border-radius:8px;color:#fff;margin-right:4px}
+.pp ul{padding-left:18px;margin:8px 0}
+.pp li button{font-size:11px;margin-left:6px;border:none;background:none;color:var(--muted);cursor:pointer;text-decoration:underline}
+.pp form{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.pp input{font:inherit;font-size:16px;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+.pp input[name=year]{width:84px}
+.pp input[name=memo]{flex:1;min-width:100px}
+.pp button.add{font:inherit;padding:4px 12px;border:none;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--fg);max-width:min(92vw,460px)}
+dialog input{width:100%;font:inherit;font-size:16px;padding:6px;margin:4px 0 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+dialog p{font-size:13px;color:var(--muted)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:20px;font-size:13px;z-index:2000;opacity:0;transition:opacity .3s;pointer-events:none}
+#toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>♨ 百名湯 制覇マップ <span class="mode" id="mode" title="接続設定">ローカル保存</span></h1>
+  <div class="progress" id="progress"></div>
+  <div class="tools">
+    <label><input type="checkbox" id="fH" checked> 百名湯</label>
+    <label><input type="checkbox" id="fS" checked> 新百名湯</label>
+    <label><input type="checkbox" id="fU"> 未入湯のみ</label>
+    <button id="toggleList">一覧</button>
+    <button id="openSettings">設定</button>
+  </div>
+</header>
+<main>
+  <div id="map"></div>
+  <div id="list"></div>
+  <div class="legend">
+    <div><span class="mk hyaku" style="width:12px;height:12px"></span>百名湯</div>
+    <div><span class="mk shin" style="width:12px;height:12px"></span>新百名湯</div>
+    <div><span class="mk both" style="width:12px;height:12px"></span>両方</div>
+    <div style="color:var(--muted)">塗り＝入湯済み</div>
+  </div>
+</main>
+<dialog id="settings">
+  <form method="dialog">
+    <h3 style="margin-top:0">クラウド同期の設定</h3>
+    <p>Google Apps Script のWebアプリURLと合言葉を入れると、Mac・スマホで記録を共有します。空のままだとこの端末のブラウザにだけ保存します。</p>
+    <label>WebアプリURL<input id="sUrl" placeholder="https://script.google.com/macros/s/.../exec"></label>
+    <label>合言葉<input id="sKey" type="password" autocomplete="off"></label>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button value="cancel">閉じる</button>
+      <button value="save" id="sSave">保存して接続</button>
+    </div>
+  </form>
+</dialog>
+<div id="toast"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const LS = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+const state = { onsen: [], visits: [], cfg: LS.get('onsen.cfg', {url:'', key:''}), markers: {} };
+const $ = s => document.querySelector(s);
+const toast = m => { const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2200); };
+const cloud = () => !!(state.cfg.url && state.cfg.key);
+
+/* ---------- storage backend ---------- */
+async function api(action, payload={}){
+  if(!cloud()){
+    let v = LS.get('onsen.visits', []);
+    if(action==='add'){ v.push({id: 'L'+Date.now(), ...payload, at:new Date().toISOString()}); }
+    if(action==='delete'){ v = v.filter(x => x.id !== payload.id); }
+    LS.set('onsen.visits', v);
+    return v;
+  }
+  const r = await fetch(state.cfg.url, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({key: state.cfg.key, action, ...payload})});
+  const j = await r.json();
+  if(!j.ok) throw new Error(j.error || '通信エラー');
+  return j.visits;
+}
+async function refresh(action, payload){
+  try{ state.visits = await api(action, payload); render(); return true; }
+  catch(e){ toast('エラー: ' + e.message); return false; }
+}
+
+/* ---------- helpers ---------- */
+const kind = o => o.lists.includes('hyaku') && o.lists.includes('shin') ? 'both' : (o.lists.includes('shin') ? 'shin' : 'hyaku');
+const visitsOf = id => state.visits.filter(v => v.onsenId === id).sort((a,b)=>a.year-b.year);
+const firstYear = id => { const v = visitsOf(id); return v.length ? v[0].year : null; };
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- map ---------- */
+const map = L.map('map', {zoomControl:true, attributionControl:true}).setView([37.5, 137.5], 5);
+L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+  maxZoom: 18, attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'
+}).addTo(map);
+map.on('zoomend', updateLabels);
+
+function icon(o){
+  const done = firstYear(o.id) ? ' done' : '';
+  return L.divIcon({className:'', html:`<div class="mk ${kind(o)}${done}"></div>`, iconSize:[16,16], iconAnchor:[8,8], popupAnchor:[0,-8]});
+}
+function popupHtml(o){
+  const k = kind(o), v = visitsOf(o.id);
+  const tags = (o.lists.includes('hyaku') ? `<span class="tag" style="background:var(--hyaku)">百名湯</span>` : '') +
+               (o.lists.includes('shin') ? `<span class="tag" style="background:var(--shin)">新百名湯</span>` : '');
+  const items = v.length ? `<ul>${v.map(x=>`<li>${x.year}年${x.memo?'　'+esc(x.memo):''}<button data-del="${esc(x.id)}">削除</button></li>`).join('')}</ul>`
+                         : `<p style="color:var(--muted);margin:8px 0">未入湯</p>`;
+  return `<div class="pp"><h4>${esc(o.name)}</h4><div style="font-size:12px;color:var(--muted);margin-bottom:4px">${esc(o.pref)}</div>${tags}${items}
+    <form data-add="${o.id}"><input name="year" type="number" inputmode="numeric" min="1950" max="2100" value="${new Date().getFullYear()}" required>
+    <input name="memo" placeholder="宿・メモ（任意）"><button class="add">記録</button></form></div>`;
+}
+function buildMarkers(){
+  state.onsen.forEach(o => {
+    const m = L.marker([o.lat, o.lon], {icon: icon(o), title: o.name});
+    m.bindPopup(() => popupHtml(o));
+    m.on('popupopen', e => wirePopup(e.popup, o));
+    state.markers[o.id] = m;
+  });
+}
+function wirePopup(popup, o){
+  const el = popup.getElement();
+  el.querySelector('form[data-add]').onsubmit = async ev => {
+    ev.preventDefault();
+    const f = ev.target, year = parseInt(f.year.value, 10);
+    if(!(year>=1950 && year<=2100)) return toast('年を確認してください');
+    f.querySelector('button').disabled = true;
+    if(await refresh('add', {onsenId:o.id, onsenName:o.name, year, memo:f.memo.value.trim()})){
+      toast(`${o.name}　${year}年を記録しました`); popup.setContent(popupHtml(o)); popup.update(); wirePopup(popup, o);
+    } else f.querySelector('button').disabled = false;
+  };
+  el.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => {
+    if(!confirm('この記録を削除しますか？')) return;
+    if(await refresh('delete', {id:b.dataset.del})){ popup.setContent(popupHtml(o)); popup.update(); wirePopup(popup, o); }
+  });
+}
+function updateLabels(){
+  const show = map.getZoom() >= 7;
+  state.onsen.forEach(o => {
+    const m = state.markers[o.id], y = firstYear(o.id);
+    m.unbindTooltip();
+    if(show && y && map.hasLayer(m)) m.bindTooltip(String(y), {permanent:true, direction:'right', offset:[8,0], className:'yrlbl'}).openTooltip();
+  });
+}
+
+/* ---------- render ---------- */
+function visible(o){
+  const fH=$('#fH').checked, fS=$('#fS').checked, fU=$('#fU').checked;
+  const inList = (fH && o.lists.includes('hyaku')) || (fS && o.lists.includes('shin'));
+  return inList && !(fU && firstYear(o.id));
+}
+function render(){
+  state.onsen.forEach(o => {
+    const m = state.markers[o.id];
+    m.setIcon(icon(o));
+    if(visible(o)) m.addTo(map); else m.remove();
+  });
+  updateLabels();
+  // progress
+  const stat = key => { const all = state.onsen.filter(o=>o.lists.includes(key)); return [all.filter(o=>firstYear(o.id)).length, all.length]; };
+  const uniq = state.onsen.length, uniqDone = state.onsen.filter(o=>firstYear(o.id)).length;
+  const bar = (lbl, [d,t], col) => `<div class="prog"><div class="lbl"><span>${lbl}</span><b>${d} / ${t||'—'}</b></div><div class="bar"><i style="width:${t?d/t*100:0}%;background:${col}"></i></div></div>`;
+  $('#progress').innerHTML = bar('百名湯', stat('hyaku'), 'var(--hyaku)') + bar('新百名湯', stat('shin'), 'var(--shin)') + bar('合算（重複除く）', [uniqDone, uniq], 'var(--both)');
+  // list
+  const byPref = {};
+  state.onsen.filter(visible).forEach(o => (byPref[o.pref] ||= []).push(o));
+  $('#list').innerHTML = Object.entries(byPref).map(([p, arr]) => `<h3>${esc(p)}</h3>` + arr.map(o => {
+    const v = visitsOf(o.id);
+    return `<div class="row" data-id="${o.id}"><span class="mk ${kind(o)}${v.length?' done':''} dot"></span><span class="nm">${esc(o.name)}</span><span class="yr">${v.map(x=>x.year).join('・')}</span></div>`;
+  }).join('')).join('') || '<p style="color:var(--muted)">該当なし</p>';
+  // mode
+  const md = $('#mode'); md.textContent = cloud() ? 'クラウド同期' : 'ローカル保存'; md.classList.toggle('cloud', cloud());
+}
+
+/* ---------- UI wiring ---------- */
+['#fH','#fS','#fU'].forEach(s => $(s).onchange = render);
+$('#toggleList').onclick = () => { const l=$('#list'); l.classList.toggle('show'); $('#toggleList').textContent = l.classList.contains('show') ? '地図' : '一覧'; };
+$('#list').onclick = e => {
+  const r = e.target.closest('.row'); if(!r) return;
+  const o = state.onsen.find(x=>x.id===r.dataset.id);
+  $('#list').classList.remove('show'); $('#toggleList').textContent='一覧';
+  const m = state.markers[o.id]; if(!map.hasLayer(m)) m.addTo(map);
+  map.setView([o.lat,o.lon], 10); m.openPopup();
+};
+const openSettings = () => { $('#sUrl').value = state.cfg.url; $('#sKey').value = state.cfg.key; $('#settings').showModal(); };
+$('#openSettings').onclick = openSettings; $('#mode').onclick = openSettings;
+$('#settings').addEventListener('close', async () => {
+  if($('#settings').returnValue !== 'save') return;
+  state.cfg = {url: $('#sUrl').value.trim(), key: $('#sKey').value.trim()};
+  LS.set('onsen.cfg', state.cfg);
+  if(await refresh('list')) toast(cloud() ? 'クラウドに接続しました' : 'ローカル保存に切り替えました');
+});
+
+/* ---------- boot ---------- */
+(async () => {
+  const d = await fetch('data/onsen.json').then(r => r.json());
+  state.onsen = d.onsen;
+  buildMarkers();
+  await refresh('list');
+})();
+</script>
+</body>
+</html>
