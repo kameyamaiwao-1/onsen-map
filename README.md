@@ -18,7 +18,7 @@ Google Apps Script ── Googleスプレッドシート「入湯記録」（非
 |---|---|
 | `index.html` | 地図ページ（Leaflet＋地理院タイル） |
 | `data/onsen.json` | 温泉マスタ。`lists` に `hyaku`（百名湯）と `shin`（新百名湯）を持つ |
-| `data/hyakumeito_raw.csv` | 百名湯100件の原リスト（Wikipedia「日本百名湯」による。2002年書籍版） |
+| `data/hyakumeito_raw.csv` | 百名湯100件の原リスト（Wikipedia「日本百名湯」）。2026-11-25に書籍の目次と照合し、収録100湯の一致を確認。`onsen.json` の名称は書籍の表記に合わせた |
 | `data/geocoded.csv` | 座標の取得結果。`manual` は温泉地の代表点を手入力したもの |
 | `gas/Code.gs` | 入湯記録の読み書きAPI（Apps Scriptに貼り付ける） |
 
