@@ -91,7 +91,7 @@ dialog p{font-size:13px;color:var(--muted)}
 <dialog id="settings">
   <form method="dialog">
     <h3 style="margin-top:0">クラウド同期の設定</h3>
-    <p>Google Apps Script のWebアプリURLと合言葉を入れると、Mac・スマホで記録を共有します。空のままだとこの端末のブラウザにだけ保存します。</p>
+    <p>合言葉を入れると、Mac・スマホで記録を共有します（URLは入力済み）。合言葉が空のままだと、この端末のブラウザにだけ保存します。</p>
     <label>WebアプリURL<input id="sUrl" placeholder="https://script.google.com/macros/s/.../exec"></label>
     <label>合言葉<input id="sKey" type="password" autocomplete="off"></label>
     <div style="display:flex;gap:8px;justify-content:flex-end">
@@ -108,7 +108,9 @@ const LS = {
   get(k, d){ try{ const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 };
+const DEFAULT_URL = 'https://script.google.com/macros/s/AKfycbzuVSQUWIbejiq0v5LFekk_LmGaZaaa4zJQh6fLjBnXf-gH3HSfVOSqeu2Askwh2uio/exec';
 const state = { onsen: [], visits: [], cfg: LS.get('onsen.cfg', {url:'', key:''}), markers: {} };
+if(!state.cfg.url) state.cfg.url = DEFAULT_URL;
 const $ = s => document.querySelector(s);
 const toast = m => { const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2200); };
 const cloud = () => !!(state.cfg.url && state.cfg.key);
